@@ -1,0 +1,350 @@
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1 REM = 10PX */
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+/* Globales */
+h1,h2,h3{
+    font-family: 'Playfair Display', sans-serif;
+    margin: 0 0 5rem 0;
+}
+
+h1{
+    font-size: 5rem;
+}
+
+h2{
+    font-size: 4rem;
+}
+h3{
+    font-size: 3rem;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+img{
+    max-width: 100%; /* Cn esta propiedad las imagenes solo toman el e */
+    display: block; /* Elimina un pequeño espaciado que dejan las imagenes */
+}
+
+.btn{
+    background-color: #8cbc00;
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 1rem;
+    transition: background-color .3s ease-out;
+    margin: 2rem 3rem;
+    text-align: center;
+    border: none;
+ 
+}
+.btn:hover{
+    background-color: #769c02;
+    cursor: pointer;
+}
+
+/* Utilidades */
+.text-center{
+    text-align: center;
+}
+
+.max-width-30{
+    max-width: 30rem;
+}
+
+.contenedor-navegacion, footer{
+    border-top: 1px solid #e1e1e1;
+}
+.nav-principal{
+
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-around;
+   
+}
+
+/* Header y Navegacion */
+.nombre-sitio{
+    margin-top: 5rem;
+    text-align: center;
+}
+.nombre-sitio span{
+    color: #037bc0;
+}
+
+
+h1{
+    color: #000;
+}
+
+
+.hero{
+    height: 55rem;
+    background-image: url(../img/principal.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;   
+}
+
+/* Categorias */
+.categorias{
+    padding-top: 5rem;
+}
+.categorias h2{
+    text-align: center;
+}
+.categoria a{
+    display: block;
+    text-align: center;
+    padding: 2rem;
+    
+    font-size: 2rem;
+}
+.categoria a:hover{
+    background-color: #037bc0;
+    color: #fff;
+    border-bottom-right-radius: 1rem;
+}
+.listado-categorias{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem ;
+}
+
+/* Bloque Nosotros */
+.sobre-nosotros{
+    background-image: linear-gradient( to right, transparent 50%,  #037bc0 50%,  #037bc0 100%), url(../img/nosotros.jpg); 
+    padding: 10rem 0;
+    background-repeat: no-repeat;
+    background-size: 100%, max(120rem, 100%);
+ 
+    background-position: left center;
+
+}
+.sobre-nosotros-grid{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.texto-nosotros{
+    flex-basis: 50%;
+    padding-left: 10rem;
+    max-width: 100%;
+    color: #fff;
+}
+
+/* Listado de productos */
+.contenido-principal{
+    padding-top: 5rem;
+}
+.listado-productos{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2rem;
+}
+.producto:nth-child(1){
+    grid-column: 1 / 7;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+.producto:nth-child(1) img{
+    height: 50rem;
+    width: 100%;
+    object-fit: cover;
+}
+.producto:nth-child(2){
+    grid-column: 1 / 4;
+}
+.producto:nth-child(2) img, .producto:nth-child(3) img{
+    height: 30rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.producto:nth-child(3){
+    grid-column: 4 / 7;
+}
+.producto:nth-child(4){
+    grid-column: 1/3;
+}
+
+.producto:nth-child(5){
+    grid-column: 3/5;
+}
+
+.producto:nth-child(6){
+    grid-column: 5/7;
+}
+.producto{
+    background-color: #037bc0;
+  
+}
+.texto-producto{
+    text-align: center;
+    color: #fff;
+}
+.texto-producto h3{
+    margin: 0;
+}
+.texto-producto p{
+    margin: 0 0 .5rem 0;
+}
+.texto-producto .precio{
+    font-size: 2.8rem;
+    font-weight: 900;
+    
+} 
+
+
+/* Footer */
+footer{
+    margin: 10rem 0 0 0;
+}
+.footer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+}
+.categorias{
+    padding: 0;
+}
+.categoria-opciones a, .nosotros-opciones a, .soporte-opciones a{
+    display: block;
+}
+.categorias h3, .sobre-empresa h3, .soporte h3{
+    margin-bottom: 0.5rem;
+}
+.copyright{
+    margin-top: 5rem;
+    text-align: center;
+}
+
+
+/* Nosotros */
+.contenido-nosotros {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /* auto-fit se utiliza en el primer parámetro de minmax(). Lo que hace auto-fit es ajustar automáticamente el número de columnas o filas dentro de una cuadrícula para que quepan dentro del contenedor disponible. Si hay espacio suficiente, crea nuevas columnas o filas adicionales según sea necesario para llenar el espacio. Si hay demasiado espacio, las columnas o filas adicionales se reducen a un tamaño mínimo. */
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); /* Cuando sea menor de 250 px, Cada elemento me ocupa 1fr ESTO ME CREA UN DISEÑO SENCILLO RESPONSIVE */
+    column-gap: 4rem;
+}
+
+.informacion-nosotros{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Blog */
+.contenedor-blog{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 4rem;
+}
+
+.entrada{
+    border-bottom: 2px solid #e1e1e1;
+    padding-bottom: 4rem;
+    margin-bottom: 2rem;
+}
+.entrada:last-of-type{
+    border: none;
+}
+.entrada-meta{
+    display: flex;
+    justify-content: space-between;
+}
+
+.entrada-meta p {
+    font-weight: 700;
+}
+
+.entrada-meta span{
+    color: #037bc0 ;
+}
+.contenido-entrada-blog{
+    width: 60rem;
+    margin: 0 auto;
+}
+
+/* Galeria */
+
+.galeria{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.galeria img{
+    height: 40rem;
+    width: 40rem;
+    object-fit: cover ;
+}
+
+/* Fornulario */
+
+.formulario {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+.formulario fieldset {
+    border: 1px solid black;
+    margin-bottom: 2rem;
+}
+
+.formulario legend{
+    background-color: #005485;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 1rem;
+    margin-bottom: 4rem;
+}
+
+.campo{
+    display: flex;
+    margin-bottom: 2rem;
+ 
+}
+
+.campo label{
+    flex-basis: 10rem; /* Alinea los distintos labels */
+}
+
+
+.campo input:not([type = "radio"]),  /* :NOT APLICA LOS ESTILOS MENOS A (EN ESTE CASO MENOS EL INPUT RADIO) */
+textarea,
+.campo select {
+    flex: 1;
+    border: 1px solid #e1e1e1;
+    padding: 1rem;
+}
